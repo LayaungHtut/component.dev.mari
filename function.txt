@@ -1,0 +1,69 @@
+// Mouse Events
+onClick?: () => void | any;
+onDoubleClick?: () => void | any;
+onRightClick?: () => void | any;
+onMouseEnter?: () => void | any;
+onMouseLeave?: () => void | any;
+onMouseDown?: () => void | any;
+onMouseUp?: () => void | any;
+onMouseMove?: () => void | any;
+onMouseOver?: () => void | any;
+onMouseOut?: () => void | any;
+
+// Keyboard Events
+onKeyDown?: () => void | any;
+onKeyPress?: () => void | any;
+onKeyUp?: () => void | any;
+
+// Focus Events
+onFocus?: () => void | any;
+onBlur?: () => void | any;
+
+// Form Events
+onInput?: () => void | any;
+onChange?: () => void | any;
+onSubmit?: () => void | any;
+onReset?: () => void | any;
+
+// Clipboard Events
+onCopy?: () => void | any;
+onCut?: () => void | any;
+onPaste?: () => void | any;
+
+// Drag and Drop Events
+onDrag?: () => void | any;
+onDragStart?: () => void | any;
+onDragEnd?: () => void | any;
+onDragEnter?: () => void | any;
+onDragLeave?: () => void | any;
+onDragOver?: () => void | any;
+onDrop?: () => void | any;
+
+// Media Events
+onPlay?: () => void | any;
+onPause?: () => void | any;
+onEnded?: () => void | any;
+onVolumeChange?: () => void | any;
+
+// Touch Events
+onTouchStart?: () => void | any;
+onTouchEnd?: () => void | any;
+onTouchMove?: () => void | any;
+onTouchCancel?: () => void | any;
+
+// Wheel Events
+onWheel?: () => void | any;
+
+// Animation Events
+onAnimationStart?: () => void | any;
+onAnimationEnd?: () => void | any;
+onAnimationIteration?: () => void | any;
+
+// Transition Events (Svelte-specific)
+onOutroStart?: () => void | any;
+onOutroEnd?: () => void | any;
+onIntroStart?: () => void | any;
+onIntroEnd?: () => void | any;
+
+// Custom Events
+onCustomEvent?: () => void | any;
