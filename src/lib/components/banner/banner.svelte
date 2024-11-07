@@ -9,7 +9,7 @@
     </div>
 
     <div class="banner-footer">
-      <button>Accept Cookie</button>
+      <button>Accept no Cookie</button>
     </div>
   </div>
 </main>
