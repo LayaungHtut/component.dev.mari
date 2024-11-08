@@ -17,4 +17,8 @@
 
 <Table level={1} atk={47} critDmg={10.8} />
 
-<Banner />
+<Banner bannerHeader="cookies" bannerContent="cookies" bannerFooter="cookies" />
+
+<Banner bannerHeader="button" bannerContent="button" bannerFooter="button" />
+
+<Banner bannerHeader="default" bannerContent="default" bannerFooter="default" />
