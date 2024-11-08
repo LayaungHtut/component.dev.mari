@@ -4,6 +4,8 @@
   import Table from "$lib/components/table/table.svelte";
 
   import Banner from "$lib/components/banner/banner.svelte";
+
+  import LatestFactor from "$lib/components/LatestFactor/LatestFactor.svelte";
 </script>
 
 <Avatars
@@ -19,6 +21,4 @@
 
 <Banner bannerHeader="cookies" bannerContent="cookies" bannerFooter="cookies" />
 
-<Banner bannerHeader="button" bannerContent="button" bannerFooter="button" />
-
-<Banner bannerHeader="default" bannerContent="default" bannerFooter="default" />
+<LatestFactor />
