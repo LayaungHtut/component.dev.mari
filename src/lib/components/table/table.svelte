@@ -1,11 +1,9 @@
 <script lang="ts">
   interface tableInterface {
     // Config
-    level: number;
-    atk: number;
-    critDmg: number;
+    tableDataSource: any[];
 
-    tableToggle?: boolean;
+    tableAlterRowStripedToggle?: boolean;
 
     // Style
     tableBackgroundStrip?: string;
@@ -14,11 +12,14 @@
 
   let {
     //Config
-    level = 1,
-    atk = 47,
-    critDmg = 10.8,
+    tableDataSource = [
+      { level: 1, atk: 47, critDmg: "10.8%" },
+      { level: 20, atk: 122, critDmg: "19.1%" },
+      { level: 40, atk: 232, critDmg: "27.5%" },
+      { level: 60, atk: 457, critDmg: "47.5%" },
+    ],
 
-    tableToggle = true,
+    tableAlterRowStripedToggle = true,
 
     // Style
     tableBackgroundStrip = "#f2f2f2",
@@ -27,36 +28,23 @@
 </script>
 
 <main>
-  {#if tableToggle === true}
+  {#if tableAlterRowStripedToggle === true}
     <table style="border: {tableBorder};">
       <thead>
         <tr>
-          <th>Level</th>
-          <th>Atk</th>
-          <th>Crit Dmg</th>
+          {#each Object.keys(tableDataSource[0]) as header}
+            <th>{header.charAt(0).toUpperCase() + header.slice(1)}</th>
+          {/each}
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>{level}</td>
-          <td>{atk}</td>
-          <td>{critDmg}</td>
-        </tr>
-        <tr>
-          <td>20</td>
-          <td>122</td>
-          <td>19.1%</td>
-        </tr>
-        <tr>
-          <td>40</td>
-          <td>232</td>
-          <td>27.5%</td>
-        </tr>
-        <tr>
-          <td>60</td>
-          <td>457</td>
-          <td>47.5%</td>
-        </tr>
+        {#each tableDataSource as row, index}
+          <tr>
+            {#each Object.values(row) as cell}
+              <td>{cell}</td>
+            {/each}
+          </tr>
+        {/each}
       </tbody>
     </table>
   {/if}

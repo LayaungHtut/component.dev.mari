@@ -3,9 +3,11 @@
 
   import Table from "$lib/components/table/table.svelte";
 
-  import Banner from "$lib/components/banner/banner.svelte";
+  import Dialog from "$lib/components/dialog/dialog.svelte";
 
-  import LatestFactor from "$lib/components/LatestFactor/LatestFactor.svelte";
+  import Card from "$lib/components/cards/card.svelte";
+
+  import Accordion from "$lib/accordion/accordion.svelte";
 </script>
 
 <Avatars
@@ -17,8 +19,21 @@
   onclick={() => alert("Hello")}
 />
 
-<Table level={1} atk={47} critDmg={10.8} />
+<Table
+  tableDataSource={[
+    { level: 1, atk: 47, critDmg: "10.8%" },
+    { level: 20, atk: 122, critDmg: "19.1%" },
+    { level: 40, atk: 232, critDmg: "27.5%" },
+    { level: 60, atk: 457, critDmg: "47.5%" },
+  ]}
+/>
 
-<Banner bannerHeader="cookies" bannerContent="cookies" bannerFooter="cookies" />
+<Dialog />
 
-<LatestFactor />
+<Card
+  cardHeaderSource="Blackshore: To the shore’s end"
+  cardImageSource="https://s1.zerochan.net/Frieren.600.4172163.jpg"
+  cardContentSource="This is how description of the content looks like. Latest characters, weapons and storyline, bla bla bla.."
+/>
+
+<Accordion />
