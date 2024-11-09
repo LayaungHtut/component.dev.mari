@@ -7,7 +7,7 @@
 
   import Card from "$lib/components/cards/card.svelte";
 
-  import Accordion from "$lib/accordion/accordion.svelte";
+  import Accordion from "$lib/components/accordion/accordion.svelte";
 </script>
 
 <Avatars
