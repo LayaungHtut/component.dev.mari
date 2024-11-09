@@ -36,4 +36,11 @@
   cardContentSource="This is how description of the content looks like. Latest characters, weapons and storyline, bla bla bla.."
 />
 
-<Accordion />
+<Accordion
+  accordionSkillSource="Blazing Brilliance"
+  accordionImageSource="https://i.pinimg.com/736x/9a/97/4f/9a974f42aff13171296fbc5ed59ece40.jpg"
+  accordionSkillDescriptionSource="Changli performs up to 4 consecutive attacks, dealing Fusion DMG. After releasing Basic Attack 4, enter True Sight, lasting for 12s."
+  accordionToggle={true}
+  accordionImageWidth="100%"
+  accordionImageHeight="100%"
+/>
