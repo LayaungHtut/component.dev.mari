@@ -1,9 +1,12 @@
 <script lang="ts">
   interface accordionInterface {
     // Config
+    accordionHeaderSource: string;
+
     accordionSkillSource: string;
     accordionImageSource: string;
     accordionSkillDescriptionSource: string;
+    accordionMoreContent: string;
 
     accordionToggle: boolean;
 
@@ -14,9 +17,11 @@
 
   let {
     //Config
+    accordionHeaderSource = "Header",
     accordionSkillSource = "Skill",
     accordionImageSource = "image",
     accordionSkillDescriptionSource = "Without accordion",
+    accordionMoreContent = "More Content",
 
     // Style
     accordionImageWidth = "",
@@ -50,9 +55,6 @@
                     />
                   </div>
                   <div class="accordionSkill">
-                    <!-- <p>Blazing Brilliance</p>
-                    <p>Basic Attack</p>
-                  </div> -->
                     {accordionSkillSource}
                   </div>
                 </div>
@@ -67,60 +69,8 @@
 
                 {#if accordionToggle}
                   <div class="accordion-more">
-                    <!-- Basic Attack -->
-
-                    <h4>Basic Attack</h4>
-
-                    <p>
-                      Changli performs up to 4 consecutive attacks, dealing
-                      Fusion DMG. After releasing Basic Attack 4, enter True
-                      Sight, lasting for 12s.
-                    </p>
-
-                    <!-- Mid-air Attack -->
-
-                    <h4>Mid-air Attack</h4>
-
-                    <p>
-                      Changli consumes <a
-                        href="https://wutheringwaves.fandom.com/wiki/Stamina"
-                        >Stamina</a
-                      > to perform up to 4 consecutive attacks in mid-air, dealing
-                      Fusion DMG. After releasing Mid-Air Attack 4, enter True Sight,
-                      lasting for 12s.
-                    </p>
-
-                    <!-- Heavy Attack -->
-
-                    <h4>Heavy Attack</h4>
-
-                    <p>
-                      Hold Basic Attack on the ground to perform an upward
-                      strike at the cost of Stamina, dealing Fusion DMG. Use
-                      Basic Attack within a certain time to release Mid-Air
-                      Attack 3.
-                    </p>
-
-                    <!-- Mid-air Heavy Attack -->
-
-                    <h4>Mid-air Heavy Attack</h4>
-
-                    <p>
-                      Shortly after holding Basic Attack in mid-air or using
-                      Basic Attack True Sight, use Basic Attack to perform a
-                      plunging attack at the cost of Stamina, dealing Fusion
-                      DMG. Use Basic Attack within a certain time to release
-                      Basic Attack 3.
-                    </p>
-
-                    <!-- Dodge Counter -->
-
-                    <h4>Dodge Counter</h4>
-
-                    <p>
-                      Use Basic Attack after a successful Dodge to attack the
-                      target, dealing Fusion DMG.
-                    </p>
+                    <h2>{accordionHeaderSource}</h2>
+                    <p>{accordionMoreContent}</p>
                   </div>
                 {/if}
                 <button onclick={toggleAccordion}>
@@ -148,7 +98,8 @@
             display: none;
             justify-content: center;
             align-items: center;
-            max-height: 10rem;
+            width: 10rem;
+            height: 10rem;
           }
 
           & .accordionHeader {
@@ -162,7 +113,7 @@
             border: 0.25rem solid #c5c5c5;
             border-radius: 0.5rem;
             padding: 0.625rem;
-            max-width: 100%;
+            max-width: 80%;
           }
 
           & button {
@@ -186,19 +137,19 @@
           & .accordionSkill {
             flex-direction: row;
             font-size: 1.25rem;
-            max-width: 100%;
+            margin: 1rem;
           }
 
           & .accordionSkillDescription {
             text-align: left;
             max-width: 100%;
             font-size: 1.25rem;
-            font-weight: 500;
           }
 
           & .accordion-more {
             display: block;
             font-size: 1.25rem;
+            width: 100%;
           }
         }
       }

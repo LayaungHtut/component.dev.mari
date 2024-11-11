@@ -8,6 +8,8 @@
   import Card from "$lib/components/cards/card.svelte";
 
   import Accordion from "$lib/components/accordion/accordion.svelte";
+
+  import Carousel from "$lib/components/carousel/carousel.svelte";
 </script>
 
 <Avatars
@@ -37,10 +39,24 @@
 />
 
 <Accordion
+  accordionHeaderSource="Header"
+  accordionMoreContent="More Content"
   accordionSkillSource="Blazing Brilliance"
   accordionImageSource="https://i.pinimg.com/736x/9a/97/4f/9a974f42aff13171296fbc5ed59ece40.jpg"
   accordionSkillDescriptionSource="Changli performs up to 4 consecutive attacks, dealing Fusion DMG. After releasing Basic Attack 4, enter True Sight, lasting for 12s."
   accordionToggle={true}
   accordionImageWidth="100%"
   accordionImageHeight="100%"
+/>
+
+<Carousel
+  carouselDataSource={[
+    "https://steamuserimages-a.akamaihd.net/ugc/2486634816019385799/42EAD597D63146529E43BAE1425E25FA5E39A9D3/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
+    "https://static.animecorner.me/2024/09/1726468888-2731cfe1c0a510ad6809ed6cb3af3bcd.png",
+    "https://i.ytimg.com/vi/A2x5q69sZNw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDl2AQfF3dzcAR-7L5YqhpGJpQW8w",
+  ]}
+  carouselDataTextSource=""
+  carouselDataHeaderSource=""
+  active={0}
+  itemLength={2}
 />
