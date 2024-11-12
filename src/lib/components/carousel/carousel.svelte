@@ -14,11 +14,7 @@
 
   let {
     //Config
-    carouselDataSource = [
-      "https://steamuserimages-a.akamaihd.net/ugc/2486634816019385799/42EAD597D63146529E43BAE1425E25FA5E39A9D3/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
-      "https://static.animecorner.me/2024/09/1726468888-2731cfe1c0a510ad6809ed6cb3af3bcd.png",
-      "https://i.ytimg.com/vi/A2x5q69sZNw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDl2AQfF3dzcAR-7L5YqhpGJpQW8w",
-    ],
+    carouselDataSource = [],
 
     itemLength = carouselDataSource.length - 1,
     active = 0,
@@ -116,7 +112,7 @@
     & .carousel {
       position: relative;
       width: 100%;
-      max-width: 600px;
+      max-width: 37.5rem;
       overflow: hidden;
 
       & .slides {
@@ -126,13 +122,13 @@
         & .slide {
           min-width: 100%;
           box-sizing: border-box;
-          padding: 20px;
+          padding: 1.25rem;
           text-align: center;
 
           & img {
             width: 100%;
             height: auto;
-            border-radius: 8px;
+            border-radius: 0.5rem;
           }
         }
       }
@@ -170,8 +166,8 @@
       width: 15%;
       bottom: 1.875rem;
       left: 50%;
-      padding: 5px 1px;
-      border-radius: 25px;
+      padding: 0.3125rem 0.0625rem;
+      border-radius: 1.5625rem;
       background-color: #666666;
       opacity: 0.5;
       z-index: 10;
@@ -180,11 +176,11 @@
       & .dot {
         display: inline-block;
         background-color: #ffffff;
-        width: 10px;
-        height: 10px;
+        width: 0.625rem;
+        height: 0.625rem;
         color: #ffffff;
         border-radius: 50%;
-        margin: 2px;
+        margin: 0.125rem;
         cursor: pointer;
         justify-content: space-evenly;
 

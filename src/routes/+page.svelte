@@ -10,6 +10,8 @@
   import Accordion from "$lib/components/accordion/accordion.svelte";
 
   import Carousel from "$lib/components/carousel/carousel.svelte";
+
+  import Resonator from "$lib/components/cards/resonator.svelte";
 </script>
 
 <Avatars
@@ -59,4 +61,16 @@
   carouselDataHeaderSource=""
   active={0}
   itemLength={2}
+/>
+
+<Resonator
+  cardTitle="Latest Resonator"
+  resonatorStarsRating="★★★★★"
+  resonatorStarsSource="5"
+  resonatorNameSource="Zhe’zhi"
+  resonatorImageSource="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy9a0SUW3YBu4dEsHm_oiRfYnbFktsmgjpZw&s"
+  resonatorElementSource="Glacio"
+  resonatorWeaponSource="Rectifier"
+  resonatorElementIconSource="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy9a0SUW3YBu4dEsHm_oiRfYnbFktsmgjpZw&s"
+  resonatorWeaponIconSource="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy9a0SUW3YBu4dEsHm_oiRfYnbFktsmgjpZw&s"
 />
