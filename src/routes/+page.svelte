@@ -73,4 +73,6 @@
   resonatorWeaponSource="Rectifier"
   resonatorElementIconSource="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy9a0SUW3YBu4dEsHm_oiRfYnbFktsmgjpZw&s"
   resonatorWeaponIconSource="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy9a0SUW3YBu4dEsHm_oiRfYnbFktsmgjpZw&s"
+  imageWidth="25rem"
+  imageHeight="25rem"
 />

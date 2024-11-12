@@ -15,6 +15,9 @@
     resonatorElementIconSource: string;
     resonatorWeaponIconSource: string;
     // Style
+    borderRadius?: string;
+    imageWidth: string;
+    imageHeight: string;
   }
 
   let {
@@ -34,6 +37,9 @@
     resonatorWeaponIconSource = "",
 
     // Style
+    borderRadius = "",
+    imageWidth = "",
+    imageHeight = "",
   }: ResonatorInterface = $props();
 </script>
 
@@ -41,7 +47,11 @@
   <div class="resonator">
     <div class="resonatorCardComponent">
       <div class="resonatorImage">
-        <img src={resonatorImageSource} alt="" width="400px" height="400px" />
+        <img
+          src={resonatorImageSource}
+          alt=""
+          style="width: {imageWidth}; height: {imageHeight};"
+        />
       </div>
 
       <h3>{cardTitle}</h3>
@@ -108,28 +118,31 @@
 
         & h3 {
           text-align: left;
-          margin: 0.5rem 0.9375rem 0.625rem 0.625rem;
+          font-size: 1.25rem;
+          margin: 0.5rem 0.9375rem 0.5rem 0.625rem;
         }
 
         & .resonatorRating {
+          font-size: 1.25rem;
           & span {
             color: #ffd700;
-            margin-left: 0.625rem;
+            margin: 0 0.3125rem 0 0.625rem;
             font-size: 1.6875rem;
             text-shadow: 0.125rem 0.125rem 0.125rem rgba(0, 0, 0, 0.2);
-            margin-right: 0.3125rem;
           }
         }
 
         & .resonatorDescription {
           & h4 {
             margin: 0.625rem;
-            font-size: 1.25rem;
+            font-size: 1.5rem;
           }
 
           & .resonatorUsage {
             display: flex;
             align-items: center;
+            margin: 0.625rem;
+            font-size: 1.25rem;
 
             & .usageIcon {
               width: 1.5625rem;

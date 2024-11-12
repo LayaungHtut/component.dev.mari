@@ -138,7 +138,7 @@
     & .next {
       position: absolute;
       top: 50%;
-      background-color: #000000;
+      background-color: #000;
       border: none;
       border-radius: 50%;
       cursor: pointer;
@@ -147,6 +147,14 @@
 
     & .previous {
       left: 1.875rem;
+
+      & svg:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+
+        & path {
+          fill: #fff;
+        }
+      }
     }
 
     & .next {
@@ -178,7 +186,6 @@
         background-color: #ffffff;
         width: 0.625rem;
         height: 0.625rem;
-        color: #ffffff;
         border-radius: 50%;
         margin: 0.125rem;
         cursor: pointer;
