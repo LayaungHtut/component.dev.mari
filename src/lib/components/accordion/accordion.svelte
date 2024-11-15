@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { slide } from "svelte/transition";
+
   interface accordionInterface {
     // Config
     accordionHeaderSource: string;
@@ -68,7 +70,7 @@
                 {/if}
 
                 {#if accordionToggle}
-                  <div class="accordion-more">
+                  <div class="accordion-more" transition:slide|gloabl>
                     <h2>{accordionHeaderSource}</h2>
                     <p>{accordionMoreContent}</p>
                   </div>
