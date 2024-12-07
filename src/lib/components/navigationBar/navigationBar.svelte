@@ -22,7 +22,7 @@
   let {
     //Config
     navBarLogoSource = "",
-    navBarLogoTextSource = "Mari_Gold",
+    navBarLogoTextSource = "",
 
     navBarMenuToggle = undefined,
     navBarMenuSource = "",
@@ -177,12 +177,20 @@
         }
 
         & .MenuIcon {
-          height: 4.3rem;
-          width: 4.3rem;
+          height: 2.5rem;
+          width: 2..5rem;
           border-radius: 50%;
-          margin-left: 0.95rem;
-          box-shadow: 0.0625rem 0.0625rem 0.3125rem rgba(0, 0, 0, 0.3);
+          margin-right: 1rem;
+          box-shadow: 0.125rem 0.125rem 0.3125rem rgba(0, 0, 0, 0.5);
           cursor: pointer;
+          transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+
+            &:active {
+            transform: translateY(0.125rem);
+            box-shadow: 0.0625rem 0.0625rem 0.3125rem rgba(0, 0, 0, 0.3);
+          }
         }
       }
     }
