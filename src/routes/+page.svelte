@@ -12,7 +12,16 @@
   import Carousel from "$lib/components/carousel/carousel.svelte";
 
   import Resonator from "$lib/components/cards/resonator.svelte";
+  import NavigationBar from "$lib/components/navigationBar/navigationBar.svelte";
 </script>
+
+
+<NavigationBar 
+  navBarLogoSource="https://i.pinimg.com/736x/9a/97/4f/9a974f42aff13171296fbc5ed59ece40.jpg"
+  navBarLogoTextSource="My App"
+  navBarMenuSource="Dashboard" 
+  navBarMenuToggle={true}
+/>
 
 <Avatars
   avatarContent="image"
