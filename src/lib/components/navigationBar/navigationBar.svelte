@@ -10,7 +10,11 @@
     navBarSearchToggle?: boolean;
     navBarSearchSource?: string;
 
-    headerMenuButtonToggle?: boolean;
+    NavBarMenuButtonToggle?: boolean;
+    NavBarMenuButtonSource?: string;
+
+    NavBarMenuIconToggle?: boolean;
+    NavBarMenuIconSource?: string;
 
     // Style
   }
@@ -20,13 +24,17 @@
     navBarLogoSource = "",
     navBarLogoTextSource = "Mari_Gold",
 
-    navBarMenuToggle = true,
-    navBarMenuSource = "Dashboard",
+    navBarMenuToggle = false,
+    navBarMenuSource = "",
 
     navBarSearchToggle = true,
-    navBarSearchSource = "🔍 What's on your mind?",
+    navBarSearchSource = "",
 
-    headerMenuButtonToggle = true,
+    NavBarMenuButtonToggle = true,
+    NavBarMenuButtonSource = "Create",
+
+    NavBarMenuIconToggle = true,
+    NavBarMenuIconSource = "",
   }: navigationBarInterface = $props();
 
   // Function
@@ -46,9 +54,15 @@
     </div>
 
     {#if navBarMenuToggle}
-      <div class="headerSearch">
-        <input type="text" class="searchBox" placeholder={navBarSearchSource} />
-      </div>
+      {#if navBarSearchToggle}
+        <div class="headerSearch">
+          <input
+            type="text"
+            class="searchBox"
+            placeholder={navBarSearchSource}
+          />
+        </div>
+      {/if}
 
       <div class="headerMenu">
         <button class="headerMenuButton">
@@ -66,30 +80,24 @@
               />
             </svg>
           </span>
-          Create
+          {NavBarMenuButtonSource}
         </button>
-        <img src="/Login_Sign_Up 1.png" alt="" class="MenuIcon" />
-        <img src="/Login_Sign_Up 1.png" alt="" class="MenuIcon" />
+        {#if NavBarMenuIconToggle}
+          <img src={NavBarMenuIconSource} alt="" class="MenuIcon" />
+        {/if}
       </div>
     {/if}
   </header>
 
-  <nav class="navbarMenu">
-    <a href="/Dashboard" 
-    onclick={() => setActive( navBarMenuSource )}
-    class="navItem active">{navBarMenuSource}</a>
-    <a
-      href="/Components"
-      onclick={() => setActive("Components")}
-      class="navItem">Components</a
-    >
-    <a href="/Guide" 
-    onclick={() => setActive("Guide")}
-    class="navItem">Guide</a>
-    <a href="/Contact Us" 
-    onclick={() => setActive("Contact Us")}
-    class="navItem">Contact Us</a>
-  </nav>
+  {#if NavBarMenuButtonToggle}
+    <nav class="navbarMenu">
+      <a
+        href="/Dashboard"
+        onclick={() => setActive(navBarMenuSource)}
+        class="navItem active">{navBarMenuSource}</a
+      >
+    </nav>
+  {/if}
 </main>
 
 <style>

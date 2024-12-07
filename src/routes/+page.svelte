@@ -12,15 +12,19 @@
   import Carousel from "$lib/components/carousel/carousel.svelte";
 
   import Resonator from "$lib/components/cards/resonator.svelte";
+
   import NavigationBar from "$lib/components/navigationBar/navigationBar.svelte";
 </script>
 
 
 <NavigationBar 
+  navBarLogoTextSource = "Mari_Gold"
   navBarLogoSource="https://i.pinimg.com/736x/9a/97/4f/9a974f42aff13171296fbc5ed59ece40.jpg"
-  navBarLogoTextSource="My App"
   navBarMenuSource="Dashboard" 
   navBarMenuToggle={true}
+  navBarSearchSource = "🔍 What's on your mind?"
+  NavBarMenuIconToggle={true}
+  NavBarMenuIconSource="https://cdn-icons-png.flaticon.com/512/147/147144.png"
 />
 
 <Avatars
