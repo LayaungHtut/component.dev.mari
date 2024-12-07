@@ -20,9 +20,12 @@
 <NavigationBar 
   navBarLogoTextSource = "Mari_Gold"
   navBarLogoSource="https://i.pinimg.com/736x/9a/97/4f/9a974f42aff13171296fbc5ed59ece40.jpg"
-  navBarMenuSource="Dashboard" 
   navBarMenuToggle={true}
+  navBarMenuSource="Dashboard" 
+  navBarSearchToggle={true}
   navBarSearchSource = "🔍 What's on your mind?"
+  NavBarMenuButtonToggle={true}
+  NavBarMenuButtonSource = "Create"
   NavBarMenuIconToggle={true}
   NavBarMenuIconSource="https://cdn-icons-png.flaticon.com/512/147/147144.png"
 />

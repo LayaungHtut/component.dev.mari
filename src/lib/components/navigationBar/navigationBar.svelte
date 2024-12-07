@@ -4,7 +4,7 @@
     navBarLogoSource: string;
     navBarLogoTextSource: string;
 
-    navBarMenuToggle: boolean;
+    navBarMenuToggle?: boolean;
     navBarMenuSource: string;
 
     navBarSearchToggle?: boolean;
@@ -24,16 +24,16 @@
     navBarLogoSource = "",
     navBarLogoTextSource = "Mari_Gold",
 
-    navBarMenuToggle = false,
+    navBarMenuToggle = undefined,
     navBarMenuSource = "",
 
-    navBarSearchToggle = true,
+    navBarSearchToggle = undefined,
     navBarSearchSource = "",
 
-    NavBarMenuButtonToggle = true,
-    NavBarMenuButtonSource = "Create",
+    NavBarMenuButtonToggle = undefined,
+    NavBarMenuButtonSource = "",
 
-    NavBarMenuIconToggle = true,
+    NavBarMenuIconToggle = undefined,
     NavBarMenuIconSource = "",
   }: navigationBarInterface = $props();
 
@@ -47,13 +47,13 @@
 </script>
 
 <main>
+    {#if navBarMenuToggle}
   <header class="headerNav">
     <div class="headerLogo">
       <img src={navBarLogoSource} alt="logo" class="logo" />
       <span class="logoText">{navBarLogoTextSource}</span>
     </div>
 
-    {#if navBarMenuToggle}
       {#if navBarSearchToggle}
         <div class="headerSearch">
           <input
@@ -86,10 +86,10 @@
           <img src={NavBarMenuIconSource} alt="" class="MenuIcon" />
         {/if}
       </div>
-    {/if}
-  </header>
+</header>
+{/if} 
 
-  {#if NavBarMenuButtonToggle}
+  {#if NavBarMenuButtonToggle === true}
     <nav class="navbarMenu">
       <a
         href="/Dashboard"
@@ -111,7 +111,8 @@
       justify-content: space-between;
       background-color: rgba(250, 249, 253, 1);
       box-shadow: 0.1875rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
-      border-bottom: 0.0625rem solid #fff;
+     /*  border-bottom: 0.0625rem solid rgba(229, 231, 235, 1);
+      border-bottom-width: 50%; */
 
       & .headerLogo {
         display: flex;
@@ -176,9 +177,11 @@
         }
 
         & .MenuIcon {
-          height: 4.375rem;
-          width: 4.375rem;
-          margin-left: 0.9375rem;
+          height: 4.3rem;
+          width: 4.3rem;
+          border-radius: 50%;
+          margin-left: 0.95rem;
+          box-shadow: 0.0625rem 0.0625rem 0.3125rem rgba(0, 0, 0, 0.3);
           cursor: pointer;
         }
       }
@@ -190,7 +193,8 @@
       background-color: rgba(250, 249, 253, 1);
       padding: 0.625rem 0;
       box-shadow: 0.1875rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
-      border-top: 0.0625rem solid #eee;
+      border-top: 0.0625rem solid rgba(229, 231, 235, 1);
+      border-top-width: 20%;
 
       & .navItem {
         text-decoration: none;
