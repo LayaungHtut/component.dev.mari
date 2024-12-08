@@ -47,13 +47,13 @@
 </script>
 
 <main>
-    {#if navBarMenuToggle}
   <header class="headerNav">
     <div class="headerLogo">
       <img src={navBarLogoSource} alt="logo" class="logo" />
       <span class="logoText">{navBarLogoTextSource}</span>
     </div>
-
+    {#if navBarMenuToggle}
+  <div class="headerSectionDiv">
       {#if navBarSearchToggle}
         <div class="headerSearch">
           <input
@@ -62,9 +62,21 @@
             placeholder={navBarSearchSource}
           />
         </div>
+        <hr>
       {/if}
+    
+        <nav class="navbarMenu">
+          <a
+            href="/Dashboard"
+            onclick={() => setActive(navBarMenuSource)}
+            class="navItem active">{navBarMenuSource}</a
+          >
+        </nav>
+      
+      </div>
 
       <div class="headerMenu">
+        {#if NavBarMenuButtonToggle}
         <button class="headerMenuButton">
           <span>
             <svg
@@ -82,37 +94,32 @@
           </span>
           {NavBarMenuButtonSource}
         </button>
+        {/if}
         {#if NavBarMenuIconToggle}
           <img src={NavBarMenuIconSource} alt="" class="MenuIcon" />
         {/if}
       </div>
-</header>
-{/if} 
-
-  {#if NavBarMenuButtonToggle === true}
-    <nav class="navbarMenu">
-      <a
-        href="/Dashboard"
-        onclick={() => setActive(navBarMenuSource)}
-        class="navItem active">{navBarMenuSource}</a
-      >
-    </nav>
-  {/if}
+      {/if}
+    </header>
 </main>
 
 <style>
   main {
-    margin: 0;
-    padding: 0;
-
     & .headerNav {
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: space-between;
       background-color: rgba(250, 249, 253, 1);
       box-shadow: 0.1875rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
-     /*  border-bottom: 0.0625rem solid rgba(229, 231, 235, 1);
-      border-bottom-width: 50%; */
+  
+      width: 100%; 
+      box-sizing: border-box;
+
+      & .headerSectionDiv .headerSearch {
+        max-width: 200%; 
+        width: 100%;
+      }
 
       & .headerLogo {
         display: flex;
@@ -133,10 +140,11 @@
         flex: 1;
         display: flex;
         justify-content: center;
+        width: 100%;
 
         & .searchBox {
-          width: 80%;
-          max-width: 25rem;
+          width: 100%;
+          max-width: 35rem; 
           box-shadow: 0.0625rem 0.0625rem 0.125rem rgba(0, 0, 0, 0.25);
           padding: 0.5rem 0.75rem;
           border: 0.0625rem solid rgba(250, 249, 253, 1);
@@ -162,9 +170,7 @@
           margin-right: 0.625rem;
           cursor: pointer;
           box-shadow: 0.125rem 0.125rem 0.3125rem rgba(0, 0, 0, 0.5);
-          transition:
-            transform 0.2s ease,
-            box-shadow 0.2s ease;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
 
           &:active {
             transform: translateY(0.125rem);
@@ -178,16 +184,14 @@
 
         & .MenuIcon {
           height: 2.5rem;
-          width: 2..5rem;
+          width: 2.5rem;
           border-radius: 50%;
           margin-right: 1rem;
           box-shadow: 0.125rem 0.125rem 0.3125rem rgba(0, 0, 0, 0.5);
           cursor: pointer;
-          transition:
-            transform 0.2s ease,
-            box-shadow 0.2s ease;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
 
-            &:active {
+          &:active {
             transform: translateY(0.125rem);
             box-shadow: 0.0625rem 0.0625rem 0.3125rem rgba(0, 0, 0, 0.3);
           }
@@ -196,25 +200,21 @@
     }
 
     & .navbarMenu {
-      display: flex;
-      justify-content: center;
       background-color: rgba(250, 249, 253, 1);
       padding: 0.625rem 0;
-      box-shadow: 0.1875rem 0.1875rem 0.3125rem rgba(0, 0, 0, 0.1);
-      border-top: 0.0625rem solid rgba(229, 231, 235, 1);
-      border-top-width: 20%;
+      width: 100%; 
+    }
 
-      & .navItem {
-        text-decoration: none;
-        font-size: 1.25rem;
-        justify-content: space-evenly;
-        font-weight: 500;
-        color: rgba(102, 102, 102, 1);
-        margin: 0 1.25rem;
+    & .navItem {
+      text-decoration: none;
+      font-size: 1.25rem;
+      justify-content: space-evenly;
+      font-weight: 500;
+      color: rgba(102, 102, 102, 1);
+      margin: 0 1.25rem;
 
-        &.active {
-          color: rgba(0, 0, 0, 1);
-        }
+      &.active {
+        color: rgba(0, 0, 0, 1);
       }
     }
   }

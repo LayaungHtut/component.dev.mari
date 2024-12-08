@@ -14,6 +14,8 @@
   import Resonator from "$lib/components/cards/resonator.svelte";
 
   import NavigationBar from "$lib/components/navigationBar/navigationBar.svelte";
+  
+  import TabBar from "$lib/components/Tabs/tabBar.svelte";
 </script>
 
 
@@ -22,12 +24,20 @@
   navBarLogoSource="https://i.pinimg.com/736x/9a/97/4f/9a974f42aff13171296fbc5ed59ece40.jpg"
   navBarMenuToggle={true}
   navBarMenuSource="Dashboard" 
-  navBarSearchToggle={true}
+  navBarSearchToggle={false}
   navBarSearchSource = "🔍 What's on your mind?"
-  NavBarMenuButtonToggle={true}
+  NavBarMenuButtonToggle={false}
   NavBarMenuButtonSource = "Create"
   NavBarMenuIconToggle={true}
   NavBarMenuIconSource="https://cdn-icons-png.flaticon.com/512/147/147144.png"
+/>
+
+<TabBar 
+tabsDescription = {[
+  { heading: "Tab 1", content: "Tab 1 Content" },
+  { heading: "Tab 2", content: "Tab 2 Content" },
+  { heading: "Tab 3", content: "Tab 3 Content" },
+]}
 />
 
 <Avatars
