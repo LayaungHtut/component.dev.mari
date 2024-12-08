@@ -1,7 +1,7 @@
 <script lang="ts">
   interface tabBarInterface {
     //Config
-    tabsDescription: { heading: string; content: any  }[];
+    tabsDescription: { heading: string; content: any; }[];
 
     // Style
   }
@@ -28,10 +28,10 @@
           {tab.heading}</button
         >
       {/each}
-      <div
+    <!--   <div
         class="tabLiner"
         style="transform: translateX({activeTab * 100}%)"
-      ></div>
+      ></div> -->
     </div>
 
     <div class="tabContent">
@@ -40,6 +40,7 @@
           {tab.content}
         </div>
       {/each}
+
     </div>
   </div>
 </main>
@@ -56,6 +57,7 @@
         box-shadow: 0.0625rem 0.1875rem 0.1875rem rgba(0, 0, 0, 0.1);
 
         & .tabBtn {
+          overflow-x: auto;
           border: none;
           padding: 0.625rem 1.25rem;
           cursor: pointer;
@@ -74,26 +76,29 @@
             background-color: #f8f9fa;
             font-weight: bold;
             transition: all 0.3s ease-in-out;
-            border-bottom: 0.1875rem solid rgba(90, 170, 212, 1);
+            border-bottom: 0.2rem solid rgba(90, 170, 212, 1);
           }
         }
 
-        & .tabLiner {
+       /*  & .tabLiner {
           position: absolute;
           bottom: 0;
           left: 0;
           height: 0.25rem;
-         /*  width: 31.25rem; */
+          width: 31.25rem;
           border-radius: 1.25rem;
           background-color: rgba(90, 170, 212, 1);
           transition: all 0.3s ease;
-        }
+        } */
       }
 
       & .tabContent {
+        display: flex;
         & .content {
+          font-size: 1.25rem;
           padding: 3rem;
           opacity: 0;
+          width: 100%;
           transform: translateX(3.125rem);
           transition: all 0.5s ease-in-out;
 
