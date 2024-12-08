@@ -37,6 +37,7 @@ tabsDescription = {[
   { heading: "Tab 1", content: "Tab 1 Content" },
   { heading: "Tab 2", content: "Tab 2 Content" },
   { heading: "Tab 3", content: "Tab 3 Content" },
+  
 ]}
 />
 

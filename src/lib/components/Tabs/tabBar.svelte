@@ -1,7 +1,7 @@
 <script lang="ts">
   interface tabBarInterface {
     //Config
-    tabsDescription: { heading: string; content: string }[];
+    tabsDescription: { heading: string; content: any  }[];
 
     // Style
   }
@@ -23,7 +23,7 @@
       {#each tabsDescription as tab, index}
         <button
           class="tabBtn {index === activeTab ? 'active' : ''}"
-          ondblclick={() => handleTabClick(index)}
+          onclick={() => handleTabClick(index)}
         >
           {tab.heading}</button
         >
@@ -53,27 +53,28 @@
         justify-content: space-around;
         width: 100%;
         background-color: rgba(250, 249, 253, 1);
-        box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.1);
+        box-shadow: 0.0625rem 0.1875rem 0.1875rem rgba(0, 0, 0, 0.1);
 
         & .tabBtn {
           border: none;
-          padding: 10px 20px;
+          padding: 0.625rem 1.25rem;
           cursor: pointer;
           color: rgba(0, 0, 0, 1);
-          font-size: 16px;
+          font-size: 1rem;
           transition: all 0.5s ease;
-          text-align: center;
           width: 100%;
           background-color: rgba(250, 249, 253, 1);
-
+          
+          
           &:hover {
             background-color: rgba(237, 236, 236, 1);
           }
-
+          
           &.active {
             background-color: #f8f9fa;
             font-weight: bold;
-            transition: all 0.5s ease;
+            transition: all 0.3s ease-in-out;
+            border-bottom: 0.1875rem solid rgba(90, 170, 212, 1);
           }
         }
 
@@ -81,9 +82,9 @@
           position: absolute;
           bottom: 0;
           left: 0;
-          height: 4px;
-          width: 31.25rem;
-          border-radius: 20px;
+          height: 0.25rem;
+         /*  width: 31.25rem; */
+          border-radius: 1.25rem;
           background-color: rgba(90, 170, 212, 1);
           transition: all 0.3s ease;
         }
@@ -91,27 +92,18 @@
 
       & .tabContent {
         & .content {
-          padding: 50px;
-          display: none;
-          animation: moving 0.5s ease-in-out;
-
-          @keyframes moving {
-            from {
-              transform: translateX(50px);
-              opacity: 0;
-            }
-
-            to {
-              transform: translateX(0);
-              opacity: 1;
-            }
-          }
+          padding: 3rem;
+          opacity: 0;
+          transform: translateX(3.125rem);
+          transition: all 0.5s ease-in-out;
 
           &.active {
-            display: block;
+            opacity: 1;
+            transform: translateX(0);
           }
         }
       }
     }
   }
 </style>
+
